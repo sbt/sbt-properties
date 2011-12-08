@@ -5,7 +5,7 @@ resolvers ++= Seq(
 
 addSbtPlugin("com.github.gseitz" % "sbt-release" % "0.4")
 
-addSbtPlugin("com.typesafe.sbtscalariform" % "sbtscalariform" % "0.3.0")
+addSbtPlugin("com.typesafe.sbtscalariform" % "sbtscalariform" % "0.3.1")
 
 libraryDependencies <+= (sbtVersion)(sbtVersion =>
   "org.scala-tools.sbt" %% "scripted-plugin" % sbtVersion
