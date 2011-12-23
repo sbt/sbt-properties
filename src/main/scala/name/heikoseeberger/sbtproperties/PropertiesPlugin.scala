@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package name.heikoseeberger.sbtposterouslogin
+package name.heikoseeberger.sbtproperties
 
 import java.io.FileInputStream
 import java.util.Properties
