@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package name.heikoseeberger.sbtproperties
+package name.heikoseeberger.sbt.properties
 
 import java.io.FileInputStream
 import java.util.Properties
@@ -22,7 +22,7 @@ import sbt._
 import sbt.Keys._
 import scala.collection.JavaConverters._
 
-object PropertiesPlugin extends Plugin {
+object SbtProperties extends Plugin {
 
   def propertiesSettings: Seq[Setting[_]] = {
     import PropertiesKeys._
@@ -47,7 +47,7 @@ object PropertiesPlugin extends Plugin {
     }
   }
 
-  private def defaultFile = new File(System.getProperty("user.home"), ".sbtproperties")
+  private def defaultFile = new File(System.getProperty("user.home"), ".sbt-properties")
 
   object PropertiesKeys {
 

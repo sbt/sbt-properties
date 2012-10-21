@@ -1,7 +1,7 @@
 
-organization := "name.heikoseeberger.sbtproperties"
+organization := "name.heikoseeberger.sbt.properties"
 
-name := "sbtproperties"
+name := "sbt-properties"
 
 // version is defined in version.sbt in order to support sbt-release
 
@@ -9,19 +9,14 @@ sbtPlugin := true
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
-publishTo <<= (version) { version =>
-  def hseeberger(name: String) =
-    Resolver.file("hseeberger-%s" format name, file("/Users/heiko/projects/hseeberger.github.com/%s" format name))(Resolver.ivyStylePatterns)
-  val resolver =
-    if (version endsWith "SNAPSHOT") hseeberger("snapshots")
-    else hseeberger("releases")
-  Option(resolver)
-}
+libraryDependencies ++= Seq("org.scalaz" %% "scalaz-core" % "6.0.3")
+
+publishTo <<= isSnapshot(if (_) Some(Classpaths.sbtPluginSnapshots) else Some(Classpaths.sbtPluginReleases))
 
 publishMavenStyle := false
 
-seq(scalariformSettings: _*)
+scalariformSettings
 
-seq(scriptedSettings: _*)
+releaseSettings
 
-seq(sbtrelease.Release.releaseSettings: _*)
+scriptedSettings
