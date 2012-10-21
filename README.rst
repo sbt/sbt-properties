@@ -7,7 +7,7 @@ Plugin for `sbt`_ to read properties from a file and make them available as a ma
 Mailing list
 ------------
 
-Please use the `sbt mailing list`_ and prefix the subject with "[sbtproperties]".
+Please use the `sbt mailing list`_ and prefix the subject with "[sbt-properties]".
 
 
 Contribution policy
